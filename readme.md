@@ -21,6 +21,11 @@ The repository covers practical solutions in the following key areas:
 - **Operating Systems:** Detailed explanations and implementations related to operating systems concepts.
 - **Web Development:** Practical solutions for web development challenges and projects.
 
+## Slips 
+ - Java   [click here](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java)
+ - OS    [click here](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS)
+ 
+
 ## Usage
 
 Feel free to explore the content based on your specific needs:

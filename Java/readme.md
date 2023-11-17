@@ -1,8 +1,8 @@
-# TYBSC (CS) Practical Exam Slips Repository
+# TYBSC (CS) Java Practical Exam Slips 
 
 ![Java Language](https://img.shields.io/badge/Language-Java-blue.svg)
 
-This repository contains a collection of 30 practical exam slips for TYBSC (Computer Science) students. Each slip consists of 2 questions
+This repository contains a collection of 20 practical exam slips for TYBSC (Computer Science) students. Each slip consists of 2 questions
 
 ---
 
@@ -15,18 +15,18 @@ The slips are organized into separate directories, one for each slip. You can ac
 ## Practical Slips
 
 
-| Slips 1-10                            | Slips 11-20                           |
+| HSlips 1-10                            | HSlips 11-20                           |
 |---------------------------------------|---------------------------------------|
-| [Slip 1](https://github.com/Harish-Kushwah/java-practical-exercises/tree/slips/practicals/slip1)   | [Slip 11](https://github.com/Harish-Kushwah/java-practical-exercises/tree/slips/practicals/slip11) |
-| [Slip 2](https://github.com/Harish-Kushwah/java-practical-exercises/tree/slips/practicals/slip2)   | [Slip 12](https://github.com/Harish-Kushwah/java-practical-exercises/tree/slips/practicals/slip12) |
-| [Slip 3](https://github.com/Harish-Kushwah/java-practical-exercises/tree/slips/practicals/slip3)   | [Slip 13](https://github.com/Harish-Kushwah/java-practical-exercises/tree/slips/practicals/slip13) |
-| [Slip 4](https://github.com/Harish-Kushwah/java-practical-exercises/tree/slips/practicals/slip4)   | [Slip 14](https://github.com/Harish-Kushwah/java-practical-exercises/tree/slips/practicals/slip14) |
-| [Slip 5](https://github.com/Harish-Kushwah/java-practical-exercises/tree/slips/practicals/slip5)   | [Slip 15](https://github.com/Harish-Kushwah/java-practical-exercises/tree/slips/practicals/slip15) |
-| [Slip 6](https://github.com/Harish-Kushwah/java-practical-exercises/tree/slips/practicals/slip6)   | [Slip 16](https://github.com/Harish-Kushwah/java-practical-exercises/tree/slips/practicals/slip16) |
-| [Slip 7](https://github.com/Harish-Kushwah/java-practical-exercises/tree/slips/practicals/slip7)   | [Slip 17](https://github.com/Harish-Kushwah/java-practical-exercises/tree/slips/practicals/slip17) |
-| [Slip 8](https://github.com/Harish-Kushwah/java-practical-exercises/tree/slips/practicals/slip8)   | [Slip 18](https://github.com/Harish-Kushwah/java-practical-exercises/tree/slips/practicals/slip18) |
-| [Slip 9](https://github.com/Harish-Kushwah/java-practical-exercises/tree/slips/practicals/slip9)   | [Slip 19](https://github.com/Harish-Kushwah/java-practical-exercises/tree/slips/practicals/slip19) |
-| [Slip 10](https://github.com/Harish-Kushwah/java-practical-exercises/tree/slips/practicals/slip10) | [Slip 20](https://github.com/Harish-Kushwah/java-practical-exercises/tree/slips/practicals/slip20)|
+| [Slip 1](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java/practicals/slip1)   | [Slip 11](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java/practicals/slip11) |
+| [Slip 2](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java/practicals/slip2)   | [Slip 12](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java/practicals/slip12) |
+| [Slip 3](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java/practicals/slip3)   | [Slip 13](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java/practicals/slip13) |
+| [Slip 4](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java/practicals/slip4)   | [Slip 14](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java/practicals/slip14) |
+| [Slip 5](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java/practicals/slip5)   | [Slip 15](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java/practicals/slip15) |
+| [Slip 6](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java/practicals/slip6)   | [Slip 16](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java/practicals/slip16) |
+| [Slip 7](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java/practicals/slip7)   | [Slip 17](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java/practicals/slip17) |
+| [Slip 8](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java/practicals/slip8)   | [Slip 18](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java/practicals/slip18) |
+| [Slip 9](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java/practicals/slip9)   | [Slip 19](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java/practicals/slip19) |
+| [Slip 10](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java/practicals/slip10) | [Slip 20](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java/practicals/slip20)|
 
 
 ---

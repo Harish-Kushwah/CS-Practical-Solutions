@@ -1,4 +1,4 @@
-# TYBSC (CS) Practical Exam Slips Repository
+# TYBSC (CS) OS Practical Exam Slips 
 
 ![C Language](https://img.shields.io/badge/Language-c-blue.svg)
 
@@ -17,16 +17,16 @@ The slips are organized into separate directories, one for each slip. You can ac
 
 | Slips 1-10                            | Slips 11-20                           |
 |---------------------------------------|---------------------------------------|
-| [Slip 1](https://github.com/Harish-Kushwah/OS-practical-exercises/tree/slips/practicals/slip1)   | [Slip 11](https://github.com/Harish-Kushwah/OS-practical-exercises/tree/slips/practicals/slip11) |
-| [Slip 2](https://github.com/Harish-Kushwah/OS-practical-exercises/tree/slips/practicals/slip2)   | [Slip 12](https://github.com/Harish-Kushwah/OS-practical-exercises/tree/slips/practicals/slip12) |
-| [Slip 3](https://github.com/Harish-Kushwah/OS-practical-exercises/tree/slips/practicals/slip3)   | [Slip 13](https://github.com/Harish-Kushwah/OS-practical-exercises/tree/slips/practicals/slip13) |
-| [Slip 4](https://github.com/Harish-Kushwah/OS-practical-exercises/tree/slips/practicals/slip4)   | [Slip 14](https://github.com/Harish-Kushwah/OS-practical-exercises/tree/slips/practicals/slip14) |
-| [Slip 5](https://github.com/Harish-Kushwah/OS-practical-exercises/tree/slips/practicals/slip5)   | [Slip 15](https://github.com/Harish-Kushwah/OS-practical-exercises/tree/slips/practicals/slip15) |
-| [Slip 6](https://github.com/Harish-Kushwah/OS-practical-exercises/tree/slips/practicals/slip6)   | [Slip 16](https://github.com/Harish-Kushwah/OS-practical-exercises/tree/slips/practicals/slip16) |
-| [Slip 7](https://github.com/Harish-Kushwah/OS-practical-exercises/tree/slips/practicals/slip7)   | [Slip 17](https://github.com/Harish-Kushwah/OS-practical-exercises/tree/slips/practicals/slip17) |
-| [Slip 8](https://github.com/Harish-Kushwah/OS-practical-exercises/tree/slips/practicals/slip8)   | [Slip 18](https://github.com/Harish-Kushwah/OS-practical-exercises/tree/slips/practicals/slip18) |
-| [Slip 9](https://github.com/Harish-Kushwah/OS-practical-exercises/tree/slips/practicals/slip9)   | [Slip 19](https://github.com/Harish-Kushwah/OS-practical-exercises/tree/slips/practicals/slip19) |
-| [Slip 10](https://github.com/Harish-Kushwah/OS-practical-exercises/tree/slips/practicals/slip10) | [Slip 20](https://github.com/Harish-Kushwah/OS-practical-exercises/tree/slips/practicals/slip20)|
+| [Slip 1](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip1)   | [Slip 11](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip11) |
+| [Slip 2](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip2)   | [Slip 12](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip12) |
+| [Slip 3](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip3)   | [Slip 13](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip13) |
+| [Slip 4](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip4)   | [Slip 14](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip14) |
+| [Slip 5](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip5)   | [Slip 15](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip15) |
+| [Slip 6](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip6)   | [Slip 16](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip16) |
+| [Slip 7](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip7)   | [Slip 17](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip17) |
+| [Slip 8](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip8)   | [Slip 18](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip18) |
+| [Slip 9](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip9)   | [Slip 19](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip19) |
+| [Slip 10](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip10) | [Slip 20](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip20)|
 
 
 ---
