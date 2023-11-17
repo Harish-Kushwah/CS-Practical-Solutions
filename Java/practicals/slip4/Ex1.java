@@ -26,7 +26,7 @@ public class Ex1 {
 
         System.out.print("Enter total columns");
         int col = scan.nextInt();
-        scan.close();
+       
         
         int [][]mat = new int[row][col];
 
@@ -44,7 +44,7 @@ public class Ex1 {
         }
         printMatrix(mat, row, col);       
         System.out.println("After changing :");
-        printMatrix(mat, row, col);
+        printMatrix(temp, col, row);
            
     }
 }
