@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Management</title>
+  </head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 3px;
+      font-weight: 600;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .container {
+      background-color: aqua;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+   
+      padding: 10px;
+      padding-top: 20px;
+      height: 500px;
+      width: 350px;
+      margin-top: 15px;
+    }
+    .container .inputs
+    {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    #radio-grp
+    {
+       width: 200px;
+       align-items: center;
+       justify-content: space-between;
+      
+    }
+    input {
+      height: 25px;
+      width: 180px;
+    }
+    .radio
+   {
+      height: 12px;
+      margin: 5px;
+      
+   }
+   .btns
+   {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+   }
+   button
+   {
+    height: 30px;
+    width: 70px;
+    border: 1px solid black;
+    border-radius:5px 5px ;
+    color: white;
+   }
+   #submit
+   {
+    background-color: rgb(49, 239, 49);
+   }
+   #clear
+   {
+    background-color: rgb(24, 84, 234);
+   }
+   h4 {
+    text-decoration: underline;
+   }
+  </style>
+  <body>
+    <div class="head">
+      <h4>Project Management</h4>
+    </div>
+
+    <div class="container">
+      <div class="inputs">
+        <label for="name">Project Name</label>
+        <input type="text" name="name" />
+      </div>
+
+      <div class="inputs">
+        <label for="assigned">Assigned to</label>
+        <input list="names" />
+        <datalist id="names">
+          <option value="Abc"></option>
+          <option value="Abc"></option>
+          <option value="Abc"></option>
+          <option value="Abc"></option>
+        </datalist>
+      </div>
+
+      <div class="inputs">
+        <label for="start-date">Start Date</label>
+        <input type="date" name="start-date" />
+      </div>
+
+      <div class="inputs">
+        <label for="end-date">End Date</label>
+        <input type="date" name="end-date" />
+      </div>
+
+      <div class="inputs">
+        <label for="">Priority</label>
+       
+         <div id="radio-grp" class="inputs">
+          <input type="radio" class="radio" />High
+          <input type="radio" class="radio" />Average
+          <input type="radio"class="radio" />low
+         </div>
+      </div>
+
+      <div class="inputs">
+        <label for="des">Description</label>
+        <textarea rows="3" , cols="20"></textarea>
+      </div>
+
+      <div class="btns">
+        <button id="submit">Submit</button>
+        <button id="clear">Clear</button>
+      </div>
+    </div>
+  </body>
+</html>
