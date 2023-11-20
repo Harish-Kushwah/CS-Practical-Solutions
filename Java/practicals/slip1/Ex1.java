@@ -18,15 +18,13 @@ public class Ex1 {
         return true;
     }
     public static void main(String[] args) {
-        
-        int n = Integer.parseInt(args[0]);
-        
-        System.out.printf("All prime number up to %d\n"  ,n);
-        for(int i=2;i<=n;i++)
+            
+        System.out.printf("All prime number");
+        for(int i=0;i<args.length;i++)
         {
-            if(isPrime(i))
+            if(isPrime(Integer.parseInt(args[i])))
             {
-                System.out.print(i + " ");
+                System.out.print(args[i] + " ");
             }
         }
     }

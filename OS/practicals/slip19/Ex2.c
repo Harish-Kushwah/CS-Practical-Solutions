@@ -1,172 +1,88 @@
 /*
-Q.2 Write the simulation program for Round Robin scheduling for given time  
-       quantum. The arrival time and first CPU-burst of different jobs should be input  
-       to the system. Accept no. of Processes, arrival time and burst time.  The output  
-       should give the Gantt chart, turnaround time and waiting time for each  
-       process.  Also  display  the  average  turnaround  time  and  average  waiting  time
+Q.1 Write the simulation program for demand paging and show the page
+       scheduling and total number of page faults according the optimal page
+       replacement algorithm. Assume the memory of n frames.
+ Reference String :   7, 5, 4, 8, 5, 7, 2, 3, 1, 3, 5, 9, 4, 6
 */
-#include<stdio.h>
-typedef struct Process
+
+// for counting the frequency
+#include <stdio.h>
+
+// replace that page which is will come in future very late
+//because keeping that page in memory is waste of memory because it will come in future 
+int getVictimPage(int ref[], int memory[], int no_frame, int start, int n)
 {
-    int id;
-    int arrival_time;
-    int burst_time;
-    int waiting_time;
-    int turn_around_time;
-    int rem_time;
-    int completion_time;
-    int start_time;
+    int max = -1;
+    int index = -1;
 
-}Process;
-
-typedef struct GanttChart
-{
-    int id;
-    int completion_time;
-    int start_time;
-    int rem_time;
-
-}GanttChart;
-
-float getAverageWaitingTime(Process p[] , int n)
-{
-    float sum =0;
-    for(int i=0;i<n;i++)
+    for (int i = 0; i < no_frame; i++)
     {
-        sum+=p[i].waiting_time;
-    }
-    return sum/n;
-}
-float getAverageTurnAroundTime(Process p[] , int n)
-{
-    float sum =0;
-    for(int i=0;i<n;i++)
-    {
-        sum+=p[i].turn_around_time;
-    }
-    return sum/n;
-}
-void printTable(Process process[], int n)
-{
-    float avg_waiting_time = getAverageWaitingTime(process ,n);
-    float avg_turn_around_time = getAverageTurnAroundTime(process ,n);
-
-    printf("\n_____________[Round Robin]_____________");
-    printf("\nID\tAT\tBT\tCT\tWT\tTAT\n");
-    for (int i = 0; i < n; i++)
-    {
-        printf("%d\t%d\t%d\t%d\t%d\t%d\t\n", process[i].id,
-                                             process[i].arrival_time,
-                                             process[i].burst_time,
-                                             process[i].completion_time, 
-                                             process[i].waiting_time, 
-                                             process[i].turn_around_time);
-    }
-    printf("\nAVERAGE WAITING TIME %.3f \nAVERAGE TURN AROUND TIME %.3f \n" ,avg_waiting_time , avg_turn_around_time );
-}
-void printGanttChart(GanttChart g[] , int n)
-{
-    printf("\nGantt Chart :\n");
-    for(int i=0;i<n;i++)
-    {
-        int dif = g[i].completion_time - g[i].start_time;
-        if(dif!=0  && g[i].id !=-1)
-        printf("p%d => [%d  %d]\ttime : %d\trem_time : %d\n" ,  g[i].id,g[i].start_time ,g[i].completion_time,dif , g[i].rem_time);
-
-    }
-    printf("\n");
-}
-void sortOnArrivalTime(Process p[] , int n)
-{
-    for(int i=0;i<n-1;i++)
-    {
-        for(int j =0 ; j<n-i-1;j++)
+        int count = 0;
+        for (int j = start; j < n; j++)
         {
-            if(p[j].arrival_time > p[j+1].arrival_time)
+            if (ref[j] == memory[i])
             {
-                Process temp = p[j];
-                p[j] = p[j+1];
-                p[j+1] = temp;
+                break;
             }
+            count++;
+        }
+        if (count >= max)
+        {
+            max = count;
+            index = i;
         }
     }
+
+    return index;
 }
-int getArrivedProcessIndex(Process p[] , int n , int current_time)
+int search(int memory[], int no_frame, int key)
 {
-    for(int i=0;i<n;i++)
+    for (int i = 0; i < no_frame; i++)
     {
-        if(p[i].arrival_time <= current_time && p[i].rem_time !=0)
-        return i;
+        if (memory[i] == key)
+            return 1;
     }
-    return -1;
+    return 0;
 }
 int main()
 {
-    int n;
-    printf("Enter number of process :");
-    scanf("%d" , &n);
+    // int ref[] = {8, 5, 7, 8, 5, 7, 2, 3, 7, 3, 5, 9, 4, 6, 2};
+    int ref[] =  {7, 5, 4, 8, 5, 7, 2, 3, 1, 3, 5, 9, 4, 6};
+    int n = sizeof(ref) / sizeof(ref[0]);
 
-    Process p[n];
-    GanttChart g[100];
+    int no_frame;
+    printf("Enter number of frames :");
+    scanf("%d", &no_frame);
 
-    for(int i = 0 ; i < n; i++ )
+    int page_fault = 0;
+
+    int memory[no_frame];
+    for (int i = 0; i < no_frame; i++)
     {
-        printf("Enter arrival time & burst time :");
-        scanf("%d%d", &p[i].arrival_time , &p[i].burst_time);
-
-        p[i].rem_time = p[i].burst_time;
-        p[i].id  = (i+1);
-        p[i].start_time =-1;
+        memory[i] = -1;
     }
-    sortOnArrivalTime(p,n);
-   
+    int memory_size = 0;
 
-    int time_quanta;
-    printf("Enter time quanta :");
-    scanf("%d" , &time_quanta);
-
-    int current_time = 0;
-    int total_process = 0 ;
-    int i = 0;
-
-    int k = 0;
-    while(total_process < n)
+    for (int i = 0; i < n; i++)
     {
-
-        i  = getArrivedProcessIndex(p,n,current_time);
-        if(i==-1)
+        // when not found
+        if (search(memory, no_frame, ref[i]) == 0)
         {
-            current_time++;
-        }
-        else
-        {
-            //set the start time of process in gantt chart
-            g[k].id = p[i].id;
-            g[k].start_time = current_time;
-        
-            //logic of Round Robin 
-            if(p[i].rem_time <= time_quanta && p[i].rem_time!=0)
+            //memory size if full then it need to replace the pages
+            if (memory_size == no_frame)
             {
-                current_time+=p[i].rem_time;
-                
-                p[i].completion_time = current_time;
-                p[i].rem_time =0;
-
-                p[i].turn_around_time = p[i].completion_time - p[i].arrival_time;
-                p[i].waiting_time  = p[i].turn_around_time  - p[i].burst_time;
-
-                total_process++;
+                int replace_index = getVictimPage(ref, memory, no_frame, i + 1, n);
+                memory[replace_index] = ref[i];
+                page_fault++;
             }
-            else if(p[i].rem_time > 0){
-                current_time+=time_quanta;
-                p[i].rem_time-=time_quanta;
+            else
+            {
+                //memory size is not full then insert into memory
+                memory[memory_size++] = ref[i];
+                page_fault++;
             }
-
-            g[k].rem_time = p[i].rem_time;
-            g[k++].completion_time = current_time;
-            //set the completion time of process in gantt chart
         }
     }
-    printTable(p,n);
-    printGanttChart(g,k);
+
+    printf("Total page fault is %d ", page_fault);
 }

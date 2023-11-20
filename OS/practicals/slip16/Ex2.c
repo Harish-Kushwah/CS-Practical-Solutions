@@ -1,24 +1,21 @@
 /*
-Q.2 Write the program to simulate Non preemptive priority scheduling. The  
-       arrival time and first CPU-burst of different jobs should be input to the  
-       system. Accept no. of Processes, arrival time and burst time. The output   
-       should give Gantt chart, turnaround time and waiting time for each process.   
-       Also find the average waiting time and turnaround time
+Q.2 Write the program to simulate FCFS CPU-scheduling. The arrival time and  
+   first CPU-burst of different jobs should be input to the system. Accept no. of  
+   Processes, arrival time and burst time. The output should give Gantt chart,  
+        turnaround time and waiting time for each process. Also find the average  
+        waiting time and turnaround time.
 */
-
 #include<stdio.h>
-
-typedef struct  Process
+typedef struct Process 
 {
-   int id;
-   int arrival_time;
-   int burst_time;
-   int waiting_time;
-   int turn_around_time;
-   int rem_burst_time;
-   int completion_time;
-   int start_time;
-  
+    int id;
+    int arrival_time;
+    int burst_time;
+    int waiting_time;
+    int completion_time;
+    int turn_around_time;
+    int start_time;
+    int rem_time;
 }Process;
 
 float getAverageWaitingTime(Process p[] , int n)
@@ -71,77 +68,91 @@ void printGanttChart(Process p[] , int n)
             }
         }
     }
-    printf("\nGant Chart :\n");
+    printf("\nGantt Chart :\n");
+
+    int start =0;
+    int end =0;
     for(int i=0;i<n;i++)
     {
         printf("p%d => [%d  %d]\n" ,  p[i].id,p[i].start_time ,p[i].completion_time);
+
     }
     printf("\n");
 }
-int getProcessIndex(Process p[] , int n , int current_time)
+void sortOnArrivalTime(Process p[] , int n)
 {
-    int min_burst_time = 100;
-    int process_needs_to_schedule = -1;
-    for(int i=0;i<n;i++)
+    for(int i=0;i<n-1;i++)
     {
-        if(p[i].arrival_time <= current_time && p[i].rem_burst_time!=0)
+        for(int j = 0; j<n-i-1;j++)
         {
-            if(p[i].burst_time < min_burst_time)
+            if(p[j].arrival_time > p[j+1].arrival_time)
             {
-                min_burst_time = p[i].burst_time;
-                process_needs_to_schedule = i;
+                Process temp = p[j];
+                p[j] = p[j+1];
+                p[j+1] = temp;
             }
         }
     }
-    return process_needs_to_schedule;
+}
+int getProcessIndex(Process p[] , int n , int current_time)
+{
+   for(int i=0;i<n;i++)
+   {
+       if(p[i].arrival_time<=current_time && p[i].rem_time!=0)
+       {
+         return i;
+       }
+   }
+   return -1;
 }
 int main()
 {
-    int n = 5;
-    // printf("Enter number of process ");
+    int n = 3;
+    // printf("Enter number of process :");
     // scanf("%d" , &n);
 
-    int ar[] = {1,0,2,3,13};
-    int br[] = {5,3,2,4,2};
+    int ar[]={0,7,4};
+    int bt[]={2,10,5};
     Process p[n];
-
-    for(int i = 0; i<n;i++)
+    for(int i=0;i<n;i++)
     {
-        // printf("Enter arrival time & burst time :");
-        // scanf("%d%d" , &p[i].arrival_time ,&p[i].burst_time);
-        p[i].arrival_time = ar[i];
-        p[i].burst_time = br[i];
-
+        // printf("Enter arrival time & burst time : ");
+        // scanf("%d%d", &p[i].arrival_time , &p[i].burst_time);
+        p[i].arrival_time =ar[i];
+        p[i].burst_time = bt[i];
+        p[i].rem_time = p[i].burst_time;
         p[i].id = (i+1);
-        p[i].rem_burst_time = p[i].burst_time; 
     }
+   
+     sortOnArrivalTime(p,n);
 
     int current_time = 0;
     int total_process = 0;
-    int  i = 0;
-
-    while (total_process<n)
+    int i=0;
+    while(total_process<n)
     {
-        i = getProcessIndex(p , n , current_time);
-
-        if(i==-1)
-        {
-            current_time++;
-        }
-        else{
+        i = getProcessIndex(p,n,current_time);
+        
+        if(i!=-1){
             p[i].start_time = current_time;
-
-            current_time+=p[i].rem_burst_time;
-            p[i].rem_burst_time = 0;
-            p[i].completion_time  = current_time;
-            p[i].turn_around_time = p[i].completion_time -p[i].arrival_time;
-            p[i].waiting_time  = p[i].turn_around_time - p[i].burst_time;
+            
+            current_time+= p[i].rem_time;
+            
+            p[i].completion_time = current_time;
+            p[i].rem_time = 0;
+            p[i].turn_around_time = p[i].completion_time - p[i].arrival_time;
+            p[i].waiting_time = p[i].turn_around_time - p[i].burst_time;
 
             total_process++;
+            i++;
         }
+        else{
+            current_time++;
+        }
+
     }
-  
     printGanttChart(p,n);
-    printTable(p , n);
+    printTable(p,n);
+
     return 0;
 }

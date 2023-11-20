@@ -1,78 +1,110 @@
 /*
-Q.1 Write the simulation program for demand paging and show the page  
-       scheduling and total number of page faults according the Optimal page  
-       replacement algorithm. Assume the memory of n frames. 
- Reference String :   7, 5, 4, 8, 5, 7, 2, 3, 1, 3, 5, 9, 4, 6,
+Q.1 Write a program to implement the shell. It should display the command     
+       prompt “myshell$”. Tokenize the command line and execute the given     
+       command by creating the child process. Additionally it should interpret the     
+       following ‘list’ commands as   
+           myshell$ list  f dirname    :- To print names of all the files in current  
+                                                        directory. 
+           myshell$ list n dirname  :- To print the number of all entries in the current  
+                                                      directory
 */
 #include<stdio.h>
-#define FOUND 1
-#define NOT_FOUND 0
+#include<stdlib.h>
+#include<dirent.h>
+#include<unistd.h>
+#include<string.h>
+#include<fcntl.h>
+#include<sys/stat.h>
 
-int search(int memory[] , int no_frame , int key)
+void list(char ch , char *dir_name)
 {
-    for(int i=0;i<no_frame;i++)
+    struct dirent *entry;
+    struct stat buff;
+    int count =0 ;
+
+    DIR *dir_status = opendir(dir_name);
+
+    if(dir_status==NULL)
     {
-        if(memory[i]==key)
-        {
-            return FOUND;
-        }
+        printf("directory not found");
+        return ;
     }
-    return NOT_FOUND;
-}
-
-int getVictimPage(int ref[] , int memory[] , int no_frame , int start , int end)
-{
-    int max = -1;
-    int index = 0;
-    for(int i=0;i<no_frame;i++)
-    {
-        int count =0;
-        for(int j =start; j<end;j++)
+   
+    if(ch=='f'){
+        while((entry = readdir(dir_status)) !=NULL)
         {
-            if(ref[j]==memory[i])
+            stat(entry->d_name , &buff);
+            if(S_IFREG && buff.st_mode)
             {
-                break;
+                printf("%s\n" , entry->d_name);
+                
             }
-            count++;
-        }
-
-        if(count>max)
-        {
-            max = count;
-            index = i;
+            
         }
     }
-    return index;
+    else if(ch=='n')
+    {
+         while((entry = readdir(dir_status)) !=NULL)
+        {
+            stat(entry->d_name , &buff);
+            if(S_IFREG && buff.st_mode)
+            {
+              count++;
+                
+            }
+            
+        }
+        printf("Total number of file %d\n" , count);
+
+    }
+
+
 }
 int main()
 {
-    int ref[] = {7, 5, 4, 8, 5, 7, 2, 3, 1, 3, 5, 9, 4, 6};
-    int n = sizeof(ref)/sizeof(ref[0]);
+    char command[80];
+    char t1[20],t2[20],t3[20],t4[20];
 
-    int no_frame ;
-    printf("Enter number of frames :");
-    scanf("%d" , &no_frame);
+    system("cls");
 
-    int memory[no_frame];
-    int memory_size = 0;
-
-    int page_fault =0;
-
-    for(int i=0;i<n;i++)
+    while (1)
     {
-        if(search(memory , no_frame , ref[i])==NOT_FOUND)
+       printf("Harish$");
+
+       fflush(stdin);
+
+       fgets(command , 80 , stdin);
+
+       int n = sscanf(command , "%s %s %s %s" , t1,t2,t3,t4);
+
+       if(n==1)
+       {
+         if(!fork())
+         {
+            execlp(t1,t1,NULL);
+            perror(t1);
+         }
+       }
+       else if(n==2)
+       {
+        if(!fork())
         {
-            if(memory_size==no_frame)
-            {
-                int replace_index = getVictimPage(ref , memory , no_frame , i , n);
-                memory[replace_index] = ref[i];
-            }
-            else{
-                memory[memory_size++] =ref[i];
-            }
-            page_fault ++;
+            execlp(t1,t1,t2,NULL);
+            perror(t1);
         }
+       }
+       else
+        if(n==3)
+       {
+         if(strcmp(t1,"list")==0)
+         {
+            list(t2[0] , t3);
+         }
+       }
+
+
     }
-    printf("Total number of page fault %d" , page_fault);
-    return 0;
+    
+
+
 }

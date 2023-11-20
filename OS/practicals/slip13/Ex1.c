@@ -1,79 +1,88 @@
 /*
-Q.1 Write a C program to implement the shell which displays the command   
-      prompt “myshell$”. It accepts the command, tokenize the command line and  
-      execute it by creating the child process. Also implement the additional   
-      command ‘typeline’ as  
-         typeline -a    filename :- To print all  lines in the file.
+Q.1 Write the simulation program for demand paging and show the page
+       scheduling and total number of page faults according the optimal page
+       replacement algorithm. Assume the memory of n frames.
+ Reference String :   3, 5, 7, 2, 5, 1, 2, 3, 1, 3, 5, 3, 1, 6, 2
 */
-#include<stdio.h>
-#include<string.h>
-#include<fcntl.h>
-#include<stdlib.h>
-#include<unistd.h>
 
+// for counting the frequency
+#include <stdio.h>
 
-void typeline(char ch , char *file_name)
+// replace that page which is will come in future very late
+//because keeping that page in memory is waste of memory because it will come in future 
+int getVictimPage(int ref[], int memory[], int no_frame, int start, int n)
 {
-    int file_open_status  = open(file_name , O_RDONLY);
+    int max = -1;
+    int index = -1;
 
-    if(file_open_status==-1)
+    for (int i = 0; i < no_frame; i++)
     {
-        printf("Unable to open file ");
-        return;
-    }
-
-    if(ch=='a')
-    {
-        char file_char;
-        while(read(file_open_status , &file_char , 1)!=0)
+        int count = 0;
+        for (int j = start; j < n; j++)
         {
-            printf("%c" , file_char);
+            if (ref[j] == memory[i])
+            {
+                break;
+            }
+            count++;
+        }
+        if (count >= max)
+        {
+            max = count;
+            index = i;
         }
     }
 
+    return index;
 }
-
-int main()
+int search(int memory[], int no_frame, int key)
 {
-    char command[80];
-    char t1[20] , t2[20],t3[20] ,t4[20];
-
-    system("cls");
-
-    while(1)
+    for (int i = 0; i < no_frame; i++)
     {
-        printf("myshell$");
-
-        fflush(stdin);
-
-        fgets(command , 80 , stdin);
-
-        int n = sscanf(command , "%s %s %s %s" , t1,t2,t3,t4);
-
-        if(n==1)
-        {
-            if(!fork())
-            {
-                execlp(t1,t1,NULL);
-                perror(t1);
-            }
-        }
-        else if(n==2)
-        {
-            if(!fork())
-            {
-                execlp(t1,t1,t2,NULL);
-                perror(t1);
-            }
-        }
-        if(n==3)
-        {
-            if(strcmp(t1,"typeline")==0)
-            {
-                typeline(t2[0] , t3);
-            }
-        }
-
+        if (memory[i] == key)
+            return 1;
     }
     return 0;
+}
+int main()
+{
+    // int ref[] = {8, 5, 7, 8, 5, 7, 2, 3, 7, 3, 5, 9, 4, 6, 2};
+    int ref[] =  {3, 5, 7, 2, 5, 1, 2, 3, 1, 3, 5, 3, 1, 6, 2};
+    int n = sizeof(ref) / sizeof(ref[0]);
+
+    int no_frame;
+    printf("Enter number of frames :");
+    scanf("%d", &no_frame);
+
+    int page_fault = 0;
+
+    int memory[no_frame];
+    for (int i = 0; i < no_frame; i++)
+    {
+        memory[i] = -1;
+    }
+    int memory_size = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        // when not found
+        if (search(memory, no_frame, ref[i]) == 0)
+        {
+            //memory size if full then it need to replace the pages
+            if (memory_size == no_frame)
+            {
+                int replace_index = getVictimPage(ref, memory, no_frame, i + 1, n);
+                memory[replace_index] = ref[i];
+                page_fault++;
+            }
+            else
+            {
+                //memory size is not full then insert into memory
+                memory[memory_size++] = ref[i];
+                page_fault++;
+            }
+        }
+    }
+
+    printf("Total page fault is %d ", page_fault);
 }
