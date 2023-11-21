@@ -6,6 +6,7 @@ Q.2 Write the simulation program for Round Robin scheduling for given time
        process.  Also  display  the  average  turnaround  time  and  average  waiting  time
 */
 #include<stdio.h>
+#include<stdlib.h>
 typedef struct Process
 {
     int id;
@@ -15,10 +16,9 @@ typedef struct Process
     int turn_around_time;
     int rem_time;
     int completion_time;
-    int start_time;
+    int allot;
 
 }Process;
-
 typedef struct GanttChart
 {
     int id;
@@ -28,6 +28,51 @@ typedef struct GanttChart
 
 }GanttChart;
 
+//------------------------ CIRCULAR QUEUE USING LINKED LIST --------------------------
+typedef struct Node 
+{
+    Process *data;
+    struct Node *next;
+    
+}Node;
+Node *add(Node *head , Process *p)
+{
+    Node *temp=NULL,*newnode = NULL;    
+    newnode =  (Node *)malloc(sizeof(Node));
+    newnode->data = p;
+    newnode->next = NULL;
+    if(head==NULL)
+    {
+        head = newnode;
+    }
+    else{
+          for(temp = head; temp->next !=NULL ; temp = temp->next);
+          temp->next = newnode;
+    }
+    return head;
+}
+int isEmpty(Node * qu)
+{
+    if(qu==NULL) 
+     return 1;
+    return 0;
+}
+Node *removeProcess(Node *head)
+{
+    Node *t = head;
+    head = head->next;
+    free(t);
+    return head;
+}
+Process* getPeek(Node *head)
+{
+    if(head!=NULL)
+    return head->data;
+    return NULL;
+}
+Node *qu = NULL;
+
+//------------------------------------------------------------------------------------------
 float getAverageWaitingTime(Process p[] , int n)
 {
     float sum =0;
@@ -64,7 +109,7 @@ void printTable(Process process[], int n)
     }
     printf("\nAVERAGE WAITING TIME %.3f \nAVERAGE TURN AROUND TIME %.3f \n" ,avg_waiting_time , avg_turn_around_time );
 }
-void printGanttChart(GanttChart g[] , int n)
+void printGanttChart(GanttChart g[] , int n )
 {
     printf("\nGantt Chart :\n");
     for(int i=0;i<n;i++)
@@ -76,97 +121,92 @@ void printGanttChart(GanttChart g[] , int n)
     }
     printf("\n");
 }
-void sortOnArrivalTime(Process p[] , int n)
+
+void insertAllArrivedProcess(Process *p , int  n ,int current_time)
 {
-    for(int i=0;i<n-1;i++)
+     for(int i=0;i<n;i++)
     {
-        for(int j =0 ; j<n-i-1;j++)
-        {
-            if(p[j].arrival_time > p[j+1].arrival_time)
-            {
-                Process temp = p[j];
-                p[j] = p[j+1];
-                p[j+1] = temp;
-            }
-        }
+        if(p[i].arrival_time <= current_time && p[i].rem_time !=0){
+         if(p[i].allot!=1){
+            p[i].allot =1;
+            qu = add(qu,&p[i]);
+         }
+        }  
     }
-}
-int getArrivedProcessIndex(Process p[] , int n , int current_time)
-{
-    for(int i=0;i<n;i++)
-    {
-        if(p[i].arrival_time <= current_time && p[i].rem_time !=0)
-        return i;
-    }
-    return -1;
 }
 int main()
 {
-    int n;
+    int n ;
     printf("Enter number of process :");
     scanf("%d" , &n);
 
+    GanttChart g[100];   
     Process p[n];
-    GanttChart g[100];
-
     for(int i = 0 ; i < n; i++ )
     {
         printf("Enter arrival time & burst time :");
         scanf("%d%d", &p[i].arrival_time , &p[i].burst_time);
-
         p[i].rem_time = p[i].burst_time;
         p[i].id  = (i+1);
-        p[i].start_time =-1;
-    }
-    sortOnArrivalTime(p,n);
-   
-
-    int time_quanta;
+        p[i].allot =0;
+    }    
+    int time_quanta ;
     printf("Enter time quanta :");
     scanf("%d" , &time_quanta);
 
     int current_time = 0;
     int total_process = 0 ;
-    int i = 0;
+    Process *p1 = NULL;
 
     int k = 0;
     while(total_process < n)
     {
-
-        i  = getArrivedProcessIndex(p,n,current_time);
-        if(i==-1)
+        insertAllArrivedProcess(p,n,current_time);
+        p1  = getPeek(qu);
+        if(p1==NULL)
         {
             current_time++;
         }
         else
         {
             //set the start time of process in gantt chart
-            g[k].id = p[i].id;
+            g[k].id = p1->id;
             g[k].start_time = current_time;
         
             //logic of Round Robin 
-            if(p[i].rem_time <= time_quanta && p[i].rem_time!=0)
+            if(p1->rem_time <= time_quanta && p1->rem_time!=0)
             {
-                current_time+=p[i].rem_time;
+                current_time+=p1->rem_time;
                 
-                p[i].completion_time = current_time;
-                p[i].rem_time =0;
+                p1->completion_time = current_time;
+                p1->rem_time =0;
 
-                p[i].turn_around_time = p[i].completion_time - p[i].arrival_time;
-                p[i].waiting_time  = p[i].turn_around_time  - p[i].burst_time;
+                p1->turn_around_time = p1->completion_time - p1->arrival_time;
+                p1->waiting_time  = p1->turn_around_time  - p1->burst_time;
+                
+                qu = removeProcess(qu);
 
                 total_process++;
             }
-            else if(p[i].rem_time > 0){
+            else if(p1->rem_time > 0){
                 current_time+=time_quanta;
-                p[i].rem_time-=time_quanta;
+                p1->rem_time-=time_quanta;
+            }
+             if(p1->rem_time != 0)
+            {
+                insertAllArrivedProcess(p,n,current_time);
+                qu = removeProcess(qu);
+                qu = add(qu ,p1); 
+               
             }
 
-            g[k].rem_time = p[i].rem_time;
+            g[k].rem_time = p1->rem_time;
             g[k++].completion_time = current_time;
             //set the completion time of process in gantt chart
-        }
+        }    
     }
     printTable(p,n);
     printGanttChart(g,k);
+
+
 }
