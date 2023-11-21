@@ -27,6 +27,8 @@ The slips are organized into separate directories, one for each slip. You can ac
 | [Slip 8](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip8)   | [Slip 18](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip18) |
 | [Slip 9](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip9)   | [Slip 19](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip19) |
 | [Slip 10](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip10) | [Slip 20](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip20)|
+| [Slip 21](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip10) | [Slip 22](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip21)|
+| [Slip 23](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS/practicals/slip23) | 
 
 
 ---
