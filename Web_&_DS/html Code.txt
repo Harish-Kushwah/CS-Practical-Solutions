@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Form</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: yellow;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: left;
+        }
+        label {
+            font-weight: bold;
+            display: inline-block;
+            width: 200px; /* Fixed width for labels */
+            margin-bottom: 10px;
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="date"], textarea {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .radio-group {
+            display: flex;
+            align-items: center;
+        }
+        .radio-group input[type="radio"] {
+            margin-right: 5px; /* Reduced margin to move radio buttons closer */
+        }
+        #submitBtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 50px;
+        }
+        #clearBtn {
+            background-color: #2196F3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2><u>Project Management</u></h2>
+    <form action="submit.php" method="post">
+        <div class="form-group">
+            <label for="projectName">Project Name:</label>
+            <input type="text" id="projectName" name="projectName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="assignedTo">Assigned To:</label>
+            <input type="text" id="assignedTo" name "assignedTo" required>
+        </div>
+
+        <div class="form-group">
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="startDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" name="endDate" required>
+        </div>
+
+        <div class="form-group">
+            <label>Priority:</label>
+            <div class="radio-group">
+                <input type="radio" id="highPriority" name="priority" value="High"> High
+                <input type="radio" id="averagePriority" name="priority" value="Average"> Average
+                <input type="radio" id="lowPriority" name="priority" value="Low"> Low
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+        </div>
+
+        <div class="button-container">
+            <button type="submit" id="submitBtn">Submit</button>
+            <button type="reset" id="clearBtn">Clear</button>
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+
+
+                    SLIP 2
+                    
+ <!DOCTYPE html>
+<html>
+<head>
+<title>my city</title>
+<style>
+img{
+ border:5px solid white;
+ bgcolor:yellow;
+}
+h2{
+  color:blue;
+font-size:100px;
+}
+</style>
+</head>
+
+
+
+<body bgcolor="pink">
+    
+     <h2><center>NASHIK</center></h2>
+     <h1 style="color:white;">Landmarks of Nashik<h1>
+     <font color="DeepPink" size="5px"><b><u> Muktidham</u><b></font><br><br>
+     <font color="green" size="7px"><i>Kapaleshwar</i></font><br>
+     <p style="font-family:fantasy;color:#660000;"> <font  size="16px"><b>pandavleni caves</b>   </font></p>
+     <font color="#ff0066" size="3px" ><i><u> Nandur Madhmeshwar Bird Sanctuary</u></i></font></br><br><br><br>
+
+
+<marquee>Please come to see Nashik, Army camp and various holy sites </marquee>
+<img src=C:\Users\dell\Desktop\kanchan\nsk.jpg  alt="image of nashik" style="margin-left:7%;"><br><br><br>
+</body>
+</html>
+
+          SLIP 3
+          
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* CSS for the company name */
+        #company-name {
+            background-color: green;
+            color: red;
+            font-size: 36px;
+            font-family: "Comic Sans MS", cursive;
+        }
+
+        /* CSS for the company description */
+        .company-description {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="company-name">Your Company Name</h1>
+    <p class="company-description">This is a description of our company displayed in blue color in a paragraph.</p>
+</body>
+</html>
+                             
+
+    sLIP 4
+    
+    <!DOCTYPE html>
+<html>
+<head>
+<style>
+table,th,td
+{
+  padding:20px;
+}
+</style>
+</head>
+
+<body>
+<table border="1" style="margin-left:25%;margin-top:10%;">
+<tr>
+ <th colspan="4"> LIST OF BOOKS </th>
+</tr>
+<tr >
+    <th rowspan="2"> ITEM No</th>
+    <th rowspan="2"> ITEM NAME</th>
+    <th colspan="2">PRICE</th>
+</tr>
+<tr>
+     <th>RS</th>
+     <th>paise</th>
+</tr>
+<tr>
+     <th>1</th>
+     <td>PROGRAMMING IN PYTHON</td>
+     <td>500</td><td>50</td>
+</tr>
+<tr>
+      <th>2</th>
+      <td>PROGRAMMING IN JAVA</td>
+      <td>385</td>
+      <td>00</td>
+</tr>
+</body>
+</html>
+
+ SLIP 7
+ 
+ <!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>A simple navigation bar</title>
+      <link rel="stylesheet" href="topnav.css">
+   </head>
+   <body>
+      <nav id="topnav">
+         <a id="logo" class="nav-link" href="#">Home</a>
+         <a class="nav-link" href="#">Java</a>
+         <a class="nav-link" href="#">HTML</a>
+         <a class="nav-link" href="#">CSS</a>
+      </nav>
+   </body>
+</html>
+  
+    TOPNAV.css
+    
+#topnav {
+   width: 100%;
+   position: fixed;
+   top: 0;
+   left: 0;
+   background-color: grey;
+   font-family: Arial, sans-serif;
+   font-size: 15px;
+}  
+
+.nav-link {
+   display: inline-block;
+   width: 100px;
+   height: 55px;
+   font-size: 20px;
+   color: blue;
+   text-align: center;    /* horizontally */
+   line-height: 55px;     /* vertically */
+   text-decoration: none;
+   transition: color 0.3s; /* Add a transition effect on the color property */
+}
+
+.nav-link:hover {
+   color: white; /* Change the text color to red on hover */
+}
+
+#logo {
+   width: 120px;
+   background-color: black;
+   color: white;
+   font-weight: bold;
+}
+
+#about {
+   position: absolute;
+   top: 0;
+   right: 0;
+}
+    
+ 
+ 
+
+
+
