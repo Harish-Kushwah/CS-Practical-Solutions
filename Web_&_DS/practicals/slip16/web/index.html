@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: rgb(212, 240, 231);
+    }
+    table {
+      border: 2px solid black;
+      height: 250px;
+      background-color: rgb(220, 242, 242);
+    }
+    #top {
+      text-align: center;
+      border: 2px solid rgb(0, 0, 0);
+      background-color: rgb(164, 231, 234);
+      height: 30px;
+    }
+
+    input {
+      height: 25px;
+      margin: 5px;
+      border: 1px solid black;
+      border-radius: 3px 3px;
+    }
+    .btns {
+      margin-top: 15px;
+    }
+    .btns button {
+      width: 80px;
+      height: 30px;
+      border: 1px solid black;
+      border-radius: 3px 3px;
+      cursor: pointer;
+      color: white;
+    }
+    #submit {
+      background-color: rgb(30, 229, 37);
+      color: black;
+    }
+    #reset {
+      background-color: rgb(59, 30, 229);
+    }
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+  </style>
+  <body>
+    <form action="index.php" method="POST">
+      <h4>Fill Subject Details</h4>
+      <table>
+        <tr id="top">
+          <td>Serial</td>
+          <td>Subject name</td>
+          <td>Marks/100</td>
+        </tr>
+
+        <tr>
+          <td>
+            <input
+              type="text"     name="s1" value ="Enter sub1 serial number"
+            />
+          </td>
+          <td>
+            <input type="text" name="sub1" placeholder="Enter sub1 Name" />
+          </td>
+          <td>
+            <input type="text" name="marks1" placeholder="Enter sub1 Marks" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="text"
+              name="s2"
+              placeholder="Enter sub2 serial number"
+            />
+          </td>
+          <td>
+            <input type="text" name="sub2" placeholder="Enter sub2 Name" />
+          </td>
+          <td>
+            <input type="text" name="marks2" placeholder="Enter sub2 Marks" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="text"
+              name="s3"
+              placeholder="Enter sub3 serial number"
+            />
+          </td>
+          <td>
+            <input type="text" name="sub3" placeholder="Enter sub3 Name" />
+          </td>
+          <td>
+            <input type="text" name="marks3" placeholder="Enter sub3 Marks" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="text"
+              name="s4"
+              placeholder="Enter sub4 serial number"
+            />
+          </td>
+          <td>
+            <input type="text" name="sub4" placeholder="Enter sub4 Name" />
+          </td>
+          <td>
+            <input type="text" name="marks4" placeholder="Enter sub4 Marks" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="text"
+              name="s5"
+              placeholder="Enter sub5 serial number"
+            />
+          </td>
+          <td>
+            <input type="text" name="sub5" placeholder="Enter sub5 Name" />
+          </td>
+          <td>
+            <input type="text" name="marks5" placeholder="Enter sub5 Marks" />
+          </td>
+        </tr>
+      </table>
+
+      <div class="btns">
+        <button type="submit" id="submit">submit</button>
+        <button type="reset" id="reset">reset</button>
+      </div>
+    </form>
+  </body>
+</html>
