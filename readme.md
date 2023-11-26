@@ -24,6 +24,7 @@ The repository covers practical solutions in the following key areas:
 ## Slips 
  - Java   [click here](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Java)
  - OS    [click here](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/OS)
+ - Web&DS    [click here](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/Web_%26_DS)
  
 
 ## Usage
