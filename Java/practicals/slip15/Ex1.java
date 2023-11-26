@@ -19,14 +19,17 @@ public class Ex1 {
 
         try {
 
-            File file1 = new File("practicals/slip15/" + first_file_name);
-            File file2 = new File("practicals/slip15/" + second_file_name);
+            File file1 = new File("Java/practicals/slip15/" + first_file_name);
+            File file2 = new File("Java/practicals/slip15/" + second_file_name);
 
             if (!file1.exists()) {
                 file1.createNewFile();
+                System.out.println(first_file_name + " Files created successfully");
             }
             if (!file2.exists()) {
                 file2.createNewFile();
+                System.out.println(second_file_name + " Files created successfully");
+
             }
 
             FileReader fr = new FileReader(file1);
@@ -39,6 +42,8 @@ public class Ex1 {
                 fw.write(line);
                 fw.write("\n");
             }
+            System.out.println("Content copied successfully");
+
             fw.close();
             br.close();
         } catch (IOException exp) {

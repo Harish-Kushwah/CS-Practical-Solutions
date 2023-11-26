@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slip9A</title>
+</head>
+<style>
+    form {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        margin: 10px;
+    }
+    div 
+    {
+        margin: 5px;
+    }
+</style>
+ 
+<body>
+    <form action="index.php" method="POST">
+        <div>
+        <label for="op">Enter String</label>
+        <input type="text" name = 'str'>
+        </div>
+
+
+        <div>
+            <select name="sep" id="sep">
+                <option name = 'c' value="#">#</option>
+                <option name = 'c' value="|">|</option>
+                <option name = 'c' value="%">%</option>
+                <option name = 'c' value="@">@</option>
+                <option name = 'c' value="!">!</option>
+                <option name = 'c' value=",">,</option>
+            </select>
+        </div>
+        <div class="choices">
+            <input type="radio" name="op" , value="a">
+            <label for="sep">Select the separator</label>
+            
+        </div>
+        <div class="choices">
+            <input type="radio" name="op" , value="b">
+            <label for="op"> Replace all the occurrences of separator in the given string with some other separator.</label>
+            
+        </div>
+        <div class="choices">
+            <input type="radio" name="op" , value="c">
+            <label for="op">Find the last word in the given string.</label>
+            
+        </div>
+
+
+       <div class="btn">
+        <button type="submit">submit</button>
+       </div>
+    </form>
+</body>
+</html>
