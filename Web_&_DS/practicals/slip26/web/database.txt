@@ -1,0 +1,39 @@
+--Create the tables in database by executing following query
+--copy each query and run one by one
+
+-- Create Hospital Table
+CREATE TABLE IF NOT EXISTS public."Hospital"
+(
+    hosp_no integer NOT NULL,
+    hname character varying(40) COLLATE pg_catalog."default" NOT NULL,
+    hcity character varying(40) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT "Hospital_pkey" PRIMARY KEY (hosp_no)
+)
+
+-- Create Doctor Table
+CREATE TABLE IF NOT EXISTS public."Doctor"
+(
+    doc_no integer NOT NULL,
+    dname character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    address character varying(200) COLLATE pg_catalog."default",
+    city character varying(150) COLLATE pg_catalog."default",
+    area character varying(100) COLLATE pg_catalog."default",
+    fk_hospital integer NOT NULL,
+    CONSTRAINT "Doctor_pkey" PRIMARY KEY (doc_no),
+    CONSTRAINT fk_hospital FOREIGN KEY (fk_hospital)
+        REFERENCES public."Hospital" (hosp_no) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+        NOT VALID
+)
+
+--insert the records in each tables
+
+INSERT INTO public."Hospital"(
+	hosp_no, hname, hcity)
+	VALUES (1, 'civil', 'Malegaon');
+
+INSERT INTO public."Doctor"(
+	doc_no, dname, address, city, area, fk_hospital)
+	VALUES (1, 'Rahul', 'Malegaon', 'Malegaon', 'Malegaon', 1);
+
