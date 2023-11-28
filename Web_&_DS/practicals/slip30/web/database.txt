@@ -1,0 +1,52 @@
+-- Create student table 
+
+
+CREATE TABLE IF NOT EXISTS public.student
+(
+    std_no integer NOT NULL,
+    name character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    class character varying(50) COLLATE pg_catalog."default",
+    CONSTRAINT student_pkey PRIMARY KEY (std_no)
+)
+
+-- Competition table
+CREATE TABLE IF NOT EXISTS public.competition
+(
+    comp_no integer NOT NULL,
+    comp_name character varying(50) COLLATE pg_catalog."default",
+    comp_type character varying(50) COLLATE pg_catalog."default",
+    CONSTRAINT competition_pkey PRIMARY KEY (comp_no)
+)
+
+-- student competition table 
+CREATE TABLE IF NOT EXISTS public.std_com
+(
+    rank integer,
+    year integer,
+    std_id integer,
+    comp_id integer,
+    CONSTRAINT comp_id FOREIGN KEY (comp_id)
+        REFERENCES public.competition (comp_no) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+        NOT VALID,
+    CONSTRAINT std_id FOREIGN KEY (std_id)
+        REFERENCES public.student (std_no) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+        NOT VALID
+)
+
+--- insert records in each table
+
+INSERT INTO public.std_com(
+	rank, year, std_id, comp_id)
+	VALUES (1, 2023, 1, 1);
+
+INSERT INTO public.competition(
+	comp_no, comp_name, comp_type)
+	VALUES (1, 'chess', 'state');
+
+INSERT INTO public.std_com(
+	rank, year, std_id, comp_id)
+	VALUES (1, 2023, 1, 1);
