@@ -73,7 +73,7 @@ int main()
     char command[80];
     int t1[20],t2[20],t3[20],t4[20];
 
-    system("cls");
+    system("clear");
 
     while(1)
     {
