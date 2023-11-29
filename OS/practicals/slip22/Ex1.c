@@ -83,13 +83,37 @@ int main()
 
         int n =sscanf(command , "%s %s %s %s" , t1,t2,t3,t4);
 
+        if(n==1)
+        {
+            if(!fork())
+            {
+                execlp(t1,t1,NULL);
+                perror(t1);
+            }
+        }
+        else if(n==2)
+        {
+            if(!fork())
+            {
+                execlp(t1,t1,t2,NULL);
+                perror(t1);
+            }
+        }
+        else if(n==3)
+        {
+            if(!fork())
+            {
+                execlp(t1,t1,t2,t3,NULL);
+                perror(t1);
+            }
+        }
         if(n==4)
         {
             if(strcmp(t1,"search")==0)
             {
                 search(t2[0],t3,t4);
             }
-        } 
+        }
     }
 
     return 0;
