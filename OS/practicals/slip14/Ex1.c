@@ -52,10 +52,6 @@ void typeline(char *ch , char *file_name)
     
     
 }
-int fork()
-{
-    return 0;
-}
 int main()
 {
     char command[80];
