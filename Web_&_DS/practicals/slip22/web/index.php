@@ -1,12 +1,8 @@
 <?php
-
 session_start();
-
 if (!isset($_SESSION['arr'])) {
     $_SESSION['arr'] = [];
 }
-
-
 $mm = <<<M
   <form action="index.php" method=POST>
 
@@ -31,7 +27,6 @@ $mm = <<<M
   M;
 
 echo $mm;
-
 $ch = $_POST['c'];
 
 function print_queue()
@@ -42,9 +37,9 @@ function print_queue()
         echo $val." ";
     }
 }
+
 if ($ch == 'a') {
-    $num = $_POST['num'];
-    array_push($_SESSION['arr'], $num);
+    array_push($_SESSION['arr'], $_POST['num']);
     print_queue();
 
 } else if ($ch == 'b') {
