@@ -17,7 +17,7 @@ class Signal extends JFrame
 {
     MyPanel red,green,yellow,time;
     Container container;
-    JLabel counter;
+    JLabel counter , msg;
     Signal(){
         super("Traffic Signal");
         setSize(400,500);
@@ -41,13 +41,21 @@ class Signal extends JFrame
         time = new MyPanel(Color.white);
 
         counter = new JLabel("60");
+        msg = new JLabel();
+
         time.add(counter , SwingConstants.CENTER);
-        
+        activate(1);
         Runnable rh = ()->{
           int i = 1;
+          int c = 1;
           while(true){
             counter.setText(Integer.toString(i));
 
+            if(i==60){
+                c = c%3 + 1;
+                activate(c);
+            }
+          
             try{
                 Thread.sleep(1000);
             }
@@ -62,23 +70,48 @@ class Signal extends JFrame
         new Thread(rh).start();
 
         GridBagConstraints gbc = new GridBagConstraints();
-    
         gbc.gridx  = 1;
-        gbc.gridy = 1;
     
-        gb.add(red, gbc);
+        gbc.gridy = 1;
+        gb.add(msg , gbc);
+        
         gbc.gridy = 2;
+        gb.add(red, gbc);
+        gbc.gridy = 3;
         gb.add(green , gbc);
 
-        gbc.gridy = 3;
+        gbc.gridy = 4;
         gb.add(yellow,gbc);
 
-        gbc.gridy = 4;
+        gbc.gridy = 5;
         gb.add(time,gbc);
 
         setVisible(true);
     }
 
+    public void activate( int i)
+    {
+            if(i==1){
+                red.setBackground(Color.red);
+                yellow.setBackground(Color.white);
+                green.setBackground(Color.white);
+                msg.setText("Stop!!");
+            }
+            else if(i==2){
+                red.setBackground(Color.white);
+                yellow.setBackground(Color.white);
+                green.setBackground(Color.green);
+                msg.setText("Go Slowly.");
+
+            }
+            else{
+                red.setBackground(Color.white);
+                yellow.setBackground(Color.yellow);
+                green.setBackground(Color.white);
+                msg.setText("Go Fast.");
+
+            }
+        }
 }
 public class Ex2 {
     public static void main(String[] args) {

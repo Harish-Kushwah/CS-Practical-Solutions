@@ -21,8 +21,6 @@ public class Ex1 {
 
         TreeSet<String> tree = new TreeSet<>(friends);
         System.out.println(tree);
-
-
         
     }
 }
