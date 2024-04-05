@@ -48,7 +48,7 @@ void createNewFile(File directory[] , int *total_files ,int bitVector[], int n)
     int start_block = getFreeStartBlockIndex(bitVector, total_req_blocks);
     int total_blocks = start_block + total_req_blocks;
     
-    for(int i=0; i<total_blocks; i++)
+    for(int i=start_block; i<total_blocks; i++)
     {
         bitVector[i] = 1;
     }

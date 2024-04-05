@@ -1,11 +1,5 @@
 package sem6.Java.practicals.slip0;
 
-/*
- * 1. Write a java program to read ‘N’ names of your friends, store it into HashSet and
-   display them in ascending order.
- * 
- */
-
 import java.util.*;
 
 public class Ex1 {

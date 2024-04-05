@@ -10,7 +10,6 @@ import java.sql.SQLException;
  */
 public class ConnectionProvider {
     private static final String URL = "jdbc:postgresql://localhost:5432/sample";
-//    private static final String URL = "jdbc:postgresql://16.16.105.117:5432/techblog";
     private static final String USER = "postgres";
     private static final String PASSWORD = "Harish";
     
