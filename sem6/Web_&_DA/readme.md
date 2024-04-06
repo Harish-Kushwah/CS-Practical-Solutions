@@ -17,17 +17,17 @@ The slips are organized into separate directories, one for each slip. You can ac
 
 | 11 Slips                             | 11 Slips                            |
 |---------------------------------------|---------------------------------------|
-| [Slip 1](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip1)   | [Slip 15](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip15) |
-| [Slip 2](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip2)   | [Slip 16](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip16) |
-| [Slip 3](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip3)   | [Slip 17](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip17) |
-| [Slip 4](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip4)   | [Slip 18](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip18) |
-| [Slip 7](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip7)   | [Slip 19](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip19) |
-| [Slip 8](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip8)   | [Slip 20](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip20) |
-| [Slip 9](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip9)   | [Slip 21](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip21) |
-| [Slip 10](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip10)   | [Slip 22](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip22) |
-| [Slip 12](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip12)   | [Slip 23](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip23) |
-| [Slip 13](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip13) | [Slip 24](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip24)|
-| [Slip 26](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip26) | [Slip 30](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem5/Web_%26_DS/practicals/slip30)|
+| [Slip 1](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip1)   | [Slip 15](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip15) |
+| [Slip 2](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip2)   | [Slip 16](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip16) |
+| [Slip 3](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip3)   | [Slip 17](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip17) |
+| [Slip 4](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip4)   | [Slip 18](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip18) |
+| [Slip 7](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip7)   | [Slip 19](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip19) |
+| [Slip 8](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip8)   | [Slip 20](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip20) |
+| [Slip 9](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip9)   | [Slip 21](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip21) |
+| [Slip 10](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip10)   | [Slip 22](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip22) |
+| [Slip 12](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip12)   | [Slip 23](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip23) |
+| [Slip 13](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip13) | [Slip 24](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip24)|
+| [Slip 26](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip26) | [Slip 30](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA/practicals/slip30)|
 
 
 ---

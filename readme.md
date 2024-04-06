@@ -29,7 +29,7 @@ The repository covers practical solutions in the following key areas:
 ## Slips sem-6
  - Java   [click here](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Java)
  - OS    [click here](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/OS)
- - Web&DS    [click here](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DS)
+ - Web&DS    [click here](https://github.com/Harish-Kushwah/CS-Practical-Solutions/tree/main/sem6/Web_%26_DA)
 
  
 
