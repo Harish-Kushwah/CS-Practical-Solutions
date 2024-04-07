@@ -57,7 +57,7 @@ class Signal extends JFrame
             }
           
             try{
-                Thread.sleep(1000);
+                Thread.sleep(100);
             }
             catch(Exception exp){
                 exp.printStackTrace();
