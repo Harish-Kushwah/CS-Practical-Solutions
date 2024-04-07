@@ -83,7 +83,6 @@ void createNewFile(File directory[] , int *total_files , int bitVector[], int n)
     (*total_files)++;
 
     printf("File added success fully \n");
-    printf("Total number of remaining blocks %d" , remaining_blocks);
 }
 void deleteFile(File directory[] , int *total_files , int bitVector[], int file_id)
 {
@@ -94,7 +93,7 @@ void deleteFile(File directory[] , int *total_files , int bitVector[], int file_
             int start_block = directory[i].start_block;
             int total_block = directory[i].total_block;
             
-            for(int i =start_block ; i<=start_block+total_block; i++){
+            for(int i =start_block ; i<start_block+total_block; i++){
                 bitVector[i] = 0;
             }
             printf("File Deleted successfully");

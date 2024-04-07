@@ -36,7 +36,6 @@ int isAllProcessCompleted(Process process[] , int number_of_process)
             return NOT_COMPLETED;
         }
     }
-    printf("hello\n");
     return COMPLETED;
 }
 
@@ -100,8 +99,11 @@ int main()
                 for(int j=0; j<MAX_RES; j++){
                     available[j] += process[i].allocation[j];
                     process[i].status =COMPLETED;
-
+                  
                 }
+                 if(process[i].status == COMPLETED ){
+                        printf("p%d " , i);
+                    }
 
                 
             }    

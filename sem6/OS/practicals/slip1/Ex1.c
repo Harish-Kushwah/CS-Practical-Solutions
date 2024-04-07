@@ -93,7 +93,7 @@ void menu()
 }
 int main()
 {
-    int number_of_process = 5;
+    int number_of_process ;
     printf("Enter total number of process :");
     scanf("%d", &number_of_process);
 
