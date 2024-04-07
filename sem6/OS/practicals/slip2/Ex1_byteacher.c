@@ -120,7 +120,7 @@ int main()
         case 3:
             showDirectory(directory,p);
             break;
-        case 5:
+        case 4:
             exit(0);
         
         default:

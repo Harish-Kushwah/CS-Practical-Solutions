@@ -36,8 +36,8 @@ int* insertNumberIntoArray(int arr[], int *size, int head)
     int found = 0;
      for(int i =0 ; i<*size;i++){
         arr1[i] = arr[i];
-        if(arr1[i] == head){
-            found;
+        if(arr[i] == head){
+            found = 1;
         }
      }
 

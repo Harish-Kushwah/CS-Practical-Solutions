@@ -108,7 +108,7 @@ int main()
         case 3:
             showDirectory(directory,&total_files);
             break;
-        case 5:
+        case 4:
             exit(0);
         
         default:

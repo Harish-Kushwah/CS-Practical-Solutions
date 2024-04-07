@@ -100,7 +100,7 @@ int main()
         case 3:
             showDirectory();
             break;
-        case 5:
+        case 4:
             exit(0);
         
         default:
