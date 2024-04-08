@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <label>Enter how many terms wants to generate :</label><br>
+    <input type="number" id="num">
+    <button type="submit" onclick="getFibonacci()">generate</button>
+    <p id="fib"></p>
+    <script>
+        // 0 1 1 2 3 5 ..
+        function getFibonacci()
+        {
+            var f1 = 0;
+            var f2 = 1;
+            var ans = f1 + "," + f2 + ",";
+            var num = document.getElementById("num").value;
+
+            for(let i = 0; i<Number(num)-2; i++){
+                f3 = f1 + f2;
+                f1 = f2;
+                f2  = f3;
+                ans += f3 + ","
+            }
+         
+        document.getElementById("fib").innerText ="Fibonacci Series : "+  ans;
+            
+        }
+
+    </script>
+</body>
+</html>

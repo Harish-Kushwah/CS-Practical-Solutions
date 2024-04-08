@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--
+         Q. 1) Write a JavaScript to display message ‘Exams are near, have you started preparing for?’ (usealert
+        box ) and Accept any two numbers from user and display addition of two number .(Use Prompt and
+        confirm box)
+ -->
+    <h1 id="ans"></h1>
+    <script>
+      alert("Exams are near, have you started preparing for?");
+
+      var a = prompt("Enter number a ");
+      var b = prompt("Enter number b");
+
+      var ans = document.getElementById("ans");
+      ans.innerHTML = Number(a) + Number(b);
+
+      confirm("Are you ready");
+    </script>
+  </body>
+</html>

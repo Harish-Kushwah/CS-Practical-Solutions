@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<MovieInfo>
+    <Movie>
+        <MovieNo>1</MovieNo>
+        <MovieTitle>The Shawshank Redemption</MovieTitle>
+        <ActorName>Tim Robbins, Morgan Freeman</ActorName>
+        <ReleaseYear>1994</ReleaseYear>
+    </Movie>
+    <Movie>
+        <MovieNo>2</MovieNo>
+        <MovieTitle>The Godfather</MovieTitle>
+        <ActorName>Marlon Brando, Al Pacino</ActorName>
+        <ReleaseYear>1972</ReleaseYear>
+    </Movie>
+    <Movie>
+        <MovieNo>3</MovieNo>
+        <MovieTitle>The Dark Knight</MovieTitle>
+        <ActorName>Christian Bale, Heath Ledger</ActorName>
+        <ReleaseYear>2008</ReleaseYear>
+    </Movie>
+    <Movie>
+        <MovieNo>4</MovieNo>
+        <MovieTitle>Pulp Fiction</MovieTitle>
+        <ActorName>John Travolta, Uma Thurman</ActorName>
+        <ReleaseYear>1994</ReleaseYear>
+    </Movie>
+    <Movie>
+        <MovieNo>5</MovieNo>
+        <MovieTitle>Forrest Gump</MovieTitle>
+        <ActorName>Tom Hanks, Robin Wright</ActorName>
+        <ReleaseYear>1994</ReleaseYear>
+    </Movie>
+</MovieInfo>
