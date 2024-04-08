@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Setting Page</title>
+  </head>
+  <body>
+    <p>
+        Q. 1Write a PHP script to change the preferences of your web page like font style, font size, font color, 
+        background color using cookie. Display selected setting on next web page and actual implementation 
+        (with new settings) on third page (Use Cookies).  
+    </p>
+    <form action="setting.php" method="POST">
+      <label>Select Font Style :</label>
+      <select name="font-style">
+        <option>Italic</option>
+        <option>normal</option>
+        <option>oblique</option>
+      </select>
+      <br />
+      <label>Enter font size(px)</label>
+      <input type="number" min="0" name="font-size" />
+      <br />
+      <label>Select font color</label>
+      <input type="color" name="font-color" />
+      <br />
+      <button type="submit">Submit</button>
+      <button type="reset">reset</button>
+    </form>
+  </body>
+</html>

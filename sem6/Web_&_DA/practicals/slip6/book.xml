@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<books>
+    <book>
+        <name>PHP</name>
+        <price>2000</price>
+    </book>
+    <book>
+        <name>C</name>
+        <price>111</price>
+    </book>
+</books>
