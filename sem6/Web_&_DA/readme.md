@@ -1,4 +1,4 @@
-# TYBSC (CS) Web and Data Science Practical Exam Slips 
+# TYBSC (CS) Web and Data Analytics Practical Exam Slips 
 
 ![C Language](https://img.shields.io/badge/Language-c-blue.svg)
 
