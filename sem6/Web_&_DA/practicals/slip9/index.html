@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="membershipForm">
+        <label>Enter Username :</label>
+        <input type="text" id="username" placeholder="Enter username">
+        <br><small>Username must be at least 3 characters long,<br> consisting of letters and numbers</small>
+        <span id="usernameError" class="error"></span>
+        <br>
+        <br>
+
+        <label>Enter Passeord :</label>
+        <input type="password" id="password" placeholder="Enter password" autocomplete>
+        <br><small>Password must be at least 3 characters long,<br> one lowercase and one uppercase letter</small>
+        <span id="passwordError" class="error"></span><br>
+        <br>
+        <input type="submit" s value="submit">
+    </form>
+
+    <script>
+       document.getElementById("membershipForm").addEventListener("submit" , (e)=>{
+        e.preventDefault();
+        validate();
+       });
+        function validate(){
+        var  username = document.getElementById("username").value;
+        var  password = document.getElementById("password").value;
+           
+        var usernameRegex = /^[a-zA-Z0-9]{5,}$/;         // Username must be at least 5 characters long, consisting of letters and numbers
+        var passRegex = /^(?=.*[a-z])(?=.*[A-Z]).{3,}$/; // Password must be at least 3 characters long, contain at least one digit, one lowercase and one uppercase letter
+
+        if(!usernameRegex.test(username)){
+            document.getElementById("usernameError").innerText = "Enter valid username";
+        }
+        else{
+            document.getElementById("usernameError").innerText = "";
+        }
+
+        if(!passRegex.test(password))
+        {
+            document.getElementById("passwordError").innerText = "Enter valid password";
+        }
+        else{
+            document.getElementById("passwordError").innerText = "";
+
+        } 
+      
+        }
+    </script>
+    
+</body>
+</html>
