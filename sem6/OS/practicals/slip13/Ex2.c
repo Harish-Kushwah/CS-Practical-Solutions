@@ -5,7 +5,7 @@ the list of request in the order in which it is served. Also display the total n
 moments.
 82, 170, 43, 140, 24, 16, 190
  Starting Head Position: 50
- Direction: Right
+ Direction: Left
 */
 
 #include<stdio.h>

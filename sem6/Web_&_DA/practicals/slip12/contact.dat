@@ -1,0 +1,23 @@
+    [
+    {
+      "srno": 1,
+      "name": "John Doe",
+      "residence_number": "1234567890",
+      "mobile_number": "9876543210",
+      "address": "123 Main Street, Cityville"
+    },
+    {
+      "srno": 2,
+      "name": "Jane Smith",
+      "residence_number": "2345678901",
+      "mobile_number": "8765432109",
+      "address": "456 Elm Street, Townsburg"
+    },
+    {
+      "srno": 3,
+      "name": "Alice Johnson",
+      "residence_number": "3456789012",
+      "mobile_number": "7654321098",
+      "address": "789 Oak Avenue, Villagetown"
+    }
+  ]  

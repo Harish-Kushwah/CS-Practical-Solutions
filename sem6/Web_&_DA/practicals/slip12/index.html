@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="index.php">Create a Contact.dat file </a>
+    <br>
+    <button onclick="loadData()">Load Records</button>
+
+    <div id="container">
+        <table border="1px">
+            <thead>
+                <tr>
+                    <th>srno</th>
+                    <th>name</th>
+                    <th>residence_number</th>
+                    <th>mobile_number</th>
+                    <th>address</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function loadData()
+        {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "contact.dat");
+            xhr.onload = ()=>{
+                const data = JSON.parse(xhr.response)
+                var table = "";
+                for(let i =0; i<data.length; i++){
+                    table += '<tr> '+
+                              '<td>'+ data[i].srno +'</td>' +
+                             '<td>' + data[i].name + '</td>' + 
+                             '<td>' + data[i].residence_number + '</td>'+ 
+                             '<td>' + data[i].mobile_number + '</td>' + 
+                             '<td>' + data[i].address + '</td></tr>'
+                }
+                document.getElementById("tbody").innerHTML = table;
+            }
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

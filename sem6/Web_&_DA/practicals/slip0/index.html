@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+       function loadAboutInformation()
+        {
+           let request = new XMLHttpRequest();
+
+           request.open("GET" , "about.html");
+
+           request.onreadystatechange = function(){
+            // call whenever state change
+
+            if(this.readyState == 4 && this.status == 200)
+            {
+                //complete and successfull
+                console.log(this.responseText);
+                document.getElementById("container").innerText = this.responseText;
+
+            }
+           }
+
+           request.send();
+        }
+        
+    </script>
+</head>
+<body>
+    <h1>Welcome to home page</h1>
+    <a href="about.html">about us</a>
+
+    <button onclick="loadAboutInformation()" >Load About</button>
+    <button id="jbtn" >Jquery Load About</button>
+
+    <div id="container">
+
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            // document is ready
+
+            $("#jbtn").click(()=>{
+                $.get("about.html" , function(data){
+                    document.getElementById("container").innerText = data;
+                })
+            })
+        })
+    </script>
+</body>
+</html>
