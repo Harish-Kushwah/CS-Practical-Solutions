@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Details</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#bookSelect").change(function(){
+        var selectedBook = $(this).val();
+        $.ajax({
+            type: "GET",
+            url: "book.xml",
+            dataType: "xml",
+            success: function(xml){
+                $(xml).find('book').each(function(){
+                    var title = $(this).find('title').text();
+                    if(title === selectedBook) {
+                        var author = $(this).find('author').text();
+                        var year = $(this).find('year').text();
+                        var price = $(this).find('price').text();
+                        $("#bookDetails").html("<b>Title:</b> " + title + "<br><b>Author:</b> " + author + "<br><b>Year:</b> " + year + "<br><b>Price:</b> $" + price);
+                    }
+                });
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr);
+            }
+        });
+    });
+});
+</script>
+</head>
+<body>
+    <h2>Select a Book:</h2>
+    <select id="bookSelect">
+        <option value="">Select a book</option>
+        <option value="The Great Gatsby">The Great Gatsby</option>
+        <option value="To Kill a Mockingbird">To Kill a Mockingbird</option>
+        <!-- Add more book options as needed -->
+    </select>
+    <div id="bookDetails"></div>
+</body>
+</html>
