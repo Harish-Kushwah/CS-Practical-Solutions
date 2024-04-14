@@ -24,9 +24,9 @@ numbers (stored in array) on a cluster (Hint: Use MPI_Reduce) [15]
 int main(int argc , char *argv[])
 {
     int size,rank;
-    int local_sum = 0;
+    int local_min = MAX;
     int local_arr[MAX];
-    int global_sum = 0;
+    int global_min = MAX;
 
     MPI_Init(&argc , &argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
@@ -35,15 +35,18 @@ int main(int argc , char *argv[])
     srand(rank);
     for(int i =0; i<MAX; i++){
         local_arr[i] = rand()%100;
-        local_sum += local_arr[i];
+        if(local_min > local_arr[i])
+        {
+            local_min = local_arr[i];
+        }
     }
 
-    MPI_Reduce(&local_sum , &global_sum , 1 , MPI_INT , MPI_SUM ,0, MPI_COMM_WORLD);
-    printf("Process : %d  sum %d \n" , rank , local_sum);
+    MPI_Reduce(&local_min , &global_min , 1 , MPI_INT , MPI_MIN ,0, MPI_COMM_WORLD);
+    printf("Process : %d local min %d \n" , rank , local_min);
 
     if(rank == 0)
     {
-        printf("Total sum %d " , global_sum);
+        printf("Global min %d " , global_min);
     }
     MPI_Finalize();
     return 0;

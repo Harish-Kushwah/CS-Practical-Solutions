@@ -7,7 +7,7 @@
 </head>
 <body>
     
-    <form acction="#" method="POST">
+    <form action="index.php" method="POST">
 
         <label>Enter number </label>
         <input type="number" name="num">
