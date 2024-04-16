@@ -17,6 +17,8 @@
 
         <%
 
+            if(request.getParameter("num")!=null){
+
             int num = Integer.parseInt(request.getParameter("num"));
 
             boolean isPrime = true;
@@ -32,7 +34,7 @@
         <h1> <%= num%> is Prime Number </h1>
         <% } else {%>
         <h1 style="color:red"> <%= num%> is Not Prime Number </h1>
-        <% }%>
+        <% }}%>
 
     </body>
 </html>
