@@ -33,7 +33,7 @@ class SearchThread extends Thread {
     }
 }
 
-public class SimpleSearchEngine {
+public class Ex1Method2 {
     public static void main(String[] args) {
       
         Scanner scan = new Scanner(System.in);
