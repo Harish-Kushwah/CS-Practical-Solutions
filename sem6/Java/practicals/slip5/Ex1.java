@@ -12,9 +12,10 @@ public class Ex1 {
         contact.put("Pratik" , "2390122321");
         contact.put("Rakesh" , "1020239023");
 
-        Enumeration<String> enm = contact.elements();
+        Enumeration<String> enm = contact.keys();
         while(enm.hasMoreElements()){
-            System.out.println(enm.nextElement());
+            String key = enm.nextElement();
+            System.out.println("Name :" +key+ " Contact : " + contact.get(key));
         }
     }
 }
