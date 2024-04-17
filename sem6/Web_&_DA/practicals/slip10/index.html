@@ -11,10 +11,20 @@
 and after( )]
  -->
  <p id="paragraph"> This is paragraph </p>
+ <button id="before"> before</button>
+ <button id="after"> after</button>
  <script>
      $(document).ready(()=>{
-        $("#paragraph").before("Before");
-        $("#paragraph").after("after");
+
+        $("#before").click(function (){
+            $("#paragraph").before("THis is before ");
+
+        });
+        $("#after").click(function (){
+            $("#paragraph").after("This is after");
+
+
+        });
      })
  </script>
 </body>

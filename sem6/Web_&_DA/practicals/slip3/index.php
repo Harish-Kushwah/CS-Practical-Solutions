@@ -51,7 +51,7 @@ if(isset($_POST['username'])){
 </head>
 
 <body>
-    <form action="#" method="POST">
+    <form action="index.php" method="POST">
         <label>Enter Username :</label>
         <input type="text" name="username">
         <br>
