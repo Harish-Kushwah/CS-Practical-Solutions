@@ -1,5 +1,9 @@
 package sem6.Java.practicals.slip21;
-
+/*
+ * 2. Write a java program to solve producer consumer problem in which a producer
+produces a value and consumer consume the value before producer generate the next
+value. (Hint: use thread synchronization) 
+ */
 class SharedResources {
     int count = 0;
 
